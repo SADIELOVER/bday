@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday!!! :)</title>
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans:300,400" rel="stylesheet">
+    <link rel="shortcut icon" type="image/png" href="favicon.png" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style_hb.css">
+</head>
+<body>
+ <img src="Leonardo_Anime_XL_A_teenage_boy_stands_beside_a_towering_tree_1 (2).jpg" alt="Background"  id="background" style=" width: 100vw; height: 100vh; object-fit: cover; position: absolute; top: 0; left: 0;">
+ 
+ <a href="#" class="head-link">..</a>
+ <div class="image-container">
+     <!-- Overlay Image -->
+    <div class="overlay-image">
+         <a href="#">
+             <img src="clipbg.png" alt="Overlay" id="overlay-img" >
+         </a>
+         <img src="msg1.svg" class="msg1" alt="msg1" >
+         <img src="msg2.svg" class="msg2" alt="msg2" >
+    </div>
+  <div class="bday-wish">
+      <pre id="bday-text" ></pre>
+  </div> 
+  <div class="timer-head">
+  <h1 style="font-size: 35px;font-style: italic;">Marking Every Day of Your Beautiful Existence</h1>
+  <div id="timer"></div>
+</div>
+<audio id="birthday-audio" src="audio1.mp3" autoplay muted type="audio/mp3"></audio>
+  <script src="script_hb.js"></script>
+  <script>
+    // Unmute and play the audio when the page loads
+    window.addEventListener('load', function() {
+        var audio = document.getElementById('birthday-audio');
+        audio.muted = false;  // Unmute the audio
+        audio.play();  // Play the audio
+    });
+</script>  
+</body>
+</html>

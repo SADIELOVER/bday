@@ -1,0 +1,258 @@
+/* Style for the body */
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    min-height: 100vh;
+    background-color: #000;
+    overflow: hidden;
+    background-image: url(back3.jpeg);
+}
+
+/* Style for the hearts */
+span {
+    position: absolute;
+    pointer-events: none;
+    filter: drop-shadow(0 0 15px rgba(255,255,255,0.5));
+    animation: fadeInOut 1.5s linear forwards, growAndRotate 2s ease-in-out forwards;
+    transform-origin: center;
+    opacity: 0;
+}
+
+/* Fade in and out */
+@keyframes fadeInOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+/*Heart shape rotation and growth 
+@keyframes growAndRotate {
+    0% {
+        transform: scale(0.5) rotate(240deg);
+    }
+    100% {
+        transform: scale(1.5) rotate(360deg);
+    }
+}*/
+/* Set the background image for hearts */
+span::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url(pinkheart.png) no-repeat center;
+    background-size: cover;
+}
+
+/* Tail trail effect */
+span::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    animation: trailEffect 2s ease-in-out forwards;
+}
+
+@keyframes trailEffect {
+    0% {
+        transform: scale(0);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(2);
+        opacity: 0;
+    }
+}
+  /* Base body styling */
+       /* body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            min-height: 100vh;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            cursor: url('heart-cursor.png'), auto; /* Custom heart-shaped cursor */
+        
+
+        /* Style for each heart */
+        span {
+            position: absolute;
+            display: inline-block;
+            pointer-events: none;
+            filter: drop-shadow(0 0 8px rgba(255, 192, 203, 0.8)); /* Softer glow */
+            animation: fadeOut 1.5s ease-out forwards; /* Smooth fade out */
+            background: url('pinkheart.png') no-repeat center, url('heart.png') no-repeat center; /* Multiple images */
+            background-size: cover, cover; /* Ensure both images are scaled properly */
+            opacity: 0;
+            z-index: 10;
+        }
+
+        /* Fade-out animation */
+        @keyframes fadeOut {
+            0% {
+                opacity: 1;
+                transform: scale(1);
+            }
+            100% {
+                opacity: 0;
+                transform: scale(0.5);
+            }
+        }
+
+        /* Bootstrap-style subtle shadow */
+        .heart-shadow {
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.06);
+        } 
+        .image-container {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            background-image: url('Leonardo_Anime_XL_A_teenage_boy_stands_beside_a_towering_tree_1 (2).jpg');
+            background-size: cover;  /* Makes the background cover the entire webpage */
+            background-position: center;
+            background-repeat: no-repeat;
+            object-fit: fill;
+            top: 0%;
+            left: 0%;
+        }
+
+        /* Overlay image positioning */
+        .overlay-image{
+            background-size: 100vw 100vh;
+            position: absolute;
+            top: 100%; /* Adjust to fine-tune placement */
+            left: 62%; /* Adjust to fine-tune placement */
+            transform: translate(-50%, -100%); /* Centers overlay based on the boy */
+            width: 250px; /* Resize the overlay image */
+            height: 150px;
+            z-index: 10;
+        }
+        .head-link {
+            font-size: 10px;
+    position: absolute;
+    height: 100px;
+    width:  200px;
+    top: 65%; /* adjust to fine-tune placement */
+    left: 62%; /* adjust to fine-tune placement */
+    z-index: 10; /* ensure it's on top of the background image */
+    }
+
+    .msg1{
+        font-size: 10px;
+    position: absolute;
+    height: 200px;
+    width:  300px;
+    top: -179%; /* adjust to fine-tune placement */
+    left: -55%; /* adjust to fine-tune placement */
+    z-index: 10;
+    animation: zigzag 10s ease-in-out infinite;
+}
+
+
+
+.msg2 {
+    font-size: 10px;
+    position: absolute;
+    height: 200px;
+    width: 300px;
+    top: -179%; /* adjust to fine-tune placement */
+    left: 60%; /* adjust to fine-tune placement */
+    z-index: 10;
+    animation: zag 7s ease-in-out infinite; /* Flip animation over 10 seconds */
+    transform-origin: center;
+    display: none; /* Initially hide msg2 */
+}
+
+@keyframes zag {
+  0% {
+    transform: translateX(0) translateY(0) scaleX(-1); /* Initial mirrored state */
+  }
+  25% {
+    transform: translateX(-20px) translateY(10px) scaleX(-1); /* Move but still mirrored */
+  }
+  50% {
+    transform: translateX(20px) translateY(10px) scaleX(-1); /* Move but still mirrored */
+  }
+  75% {
+    transform: translateX(-20px) translateY(-10px) scaleX(-1); /* Move but still mirrored */
+  }
+  100% {
+    transform: translateX(0) translateY(0) scaleX(-1); /* Return to original mirrored state */
+  }
+}
+
+
+@keyframes zigzag {
+  0% {
+    transform: translateX(0) translateY(0);
+  }
+  25% {
+    transform: translateX(20px) translateY(10px);
+  }
+  50% {
+    transform: translateX(-20px) translateY(-10px);
+  }
+  75% {
+    transform: translateX(20px) translateY(10px);
+  }
+  100% {
+    transform: translateX(0) translateY(0);
+  }
+    }
+        /* Hyperlink styling */
+        .overlay-image a img {
+            display: block;
+            width: 100%;
+        }
+
+        .star {
+    position: absolute;
+    top: 50%; /* Adjust the position */
+    left: 50%;
+    width: 50px;
+    height: 50px;
+    background: radial-gradient(circle, white 0%, rgba(255,255,255,0) 70%);
+    border-radius: 50%;
+    box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.7);
+    animation: twinkle 2s infinite ease-in-out;
+}
+
+@keyframes twinkle {
+    0%, 100% {
+        opacity: 0.8;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.2;
+        transform: scale(1.2);
+    }
+}      
+.bday-wish{
+  font-size: 25px;
+  color: aqua;
+}
+.timer-head {
+    color: #FF69B4;
+    top: 70%;
+    right: 50%; /* Move the timer to the right side */
+    position: absolute; /* Use absolute positioning to move the timer */
+    transform: translate(0, -50%); /* Keep the timer vertically centered */
+    text-align: center;
+    display: none;
+}
+
+#timer {
+    font-size: 24px;
+    font-weight: bold;
+    color: darksalmon;
+}
+
